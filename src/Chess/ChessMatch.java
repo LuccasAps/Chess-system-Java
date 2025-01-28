@@ -42,7 +42,10 @@ public class ChessMatch {
 
     private void validateSoucePossition(Position position) {
         if(!board.thereIsaAPiece(position)) {
-            throw new ChessException("There is no piece at position ");
+            throw new ChessException("There is no piece at position");
+        }
+        if(!board.piece(position).isThereAnyPossibleMove()) {
+            throw new ChessException("There is no possible moves for the chosen piece");
         }
     }
 
