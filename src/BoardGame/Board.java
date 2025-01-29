@@ -35,7 +35,7 @@ public class Board {
         return pieces[position.getRow()][position.getColumn()];
     }
     public void placePiece(Piece piece, Position position) {
-        if(thereIsaAPiece(position)) {
+        if(thereIsAPiece(position)) {
             throw new IllegalArgumentException("there is already a piece on position " + position);
         }
         pieces[position.getRow()][position.getColumn()] = piece;
@@ -63,7 +63,7 @@ public class Board {
         return positionExsists(position.getRow(), position.getColumn());
     }
 
-    public boolean thereIsaAPiece(Position position) {
+    public boolean thereIsAPiece(Position position) {
         if(!positionExsists(position)) {
             throw new IllegalArgumentException("Position not on the board");
         }
